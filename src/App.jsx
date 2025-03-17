@@ -6,10 +6,10 @@ import StudentPage from './pages/StudentPage';
 const App = () => {
   return (
     <Router>
-      <div className="p-4">
+      <div>
        
         <Routes>
-          <Route path="/admin" element={<AdminPage />} />
+          <Route path="/" element={<AdminPage />} />
           <Route path="/student" element={<StudentPage />} />
         </Routes>
       </div>
