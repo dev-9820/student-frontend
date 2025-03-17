@@ -8,7 +8,7 @@ const AdminPage = () => {
 
   const handleAnnouncementSubmit = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:5000/api/announcements', announcement);
+    await axios.post('https://student-backend-6rm6.onrender.com/api/announcements', announcement);
     setAnnouncement({ title: '', description: '' });
   };
 
@@ -18,7 +18,7 @@ const AdminPage = () => {
     formData.append('title', media.title);
     formData.append('description', media.description);
     formData.append('file', media.file);
-    await axios.post('http://localhost:5000/api/media', formData, {
+    await axios.post('https://student-backend-6rm6.onrender.com/api/media', formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
     setMedia({ title: '', description: '', file: null });
@@ -30,7 +30,7 @@ const AdminPage = () => {
     formData.append('title', audio.title);
     formData.append('description', audio.description);
     formData.append('file', audio.file);
-    await axios.post('http://localhost:5000/api/audio', formData, {
+    await axios.post('https://student-backend-6rm6.onrender.com/api/audio', formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
     setAudio({ title: '', description: '', file: null });

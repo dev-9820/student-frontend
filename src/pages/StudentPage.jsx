@@ -7,15 +7,15 @@ const StudentPage = () => {
   const [audio, setAudio] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/announcements')
+    axios.get('https://student-backend-6rm6.onrender.com/api/announcements')
       .then(response => setAnnouncements(response.data))
       .catch(error => console.error(error));
 
-    axios.get('http://localhost:5000/api/media')
+    axios.get('https://student-backend-6rm6.onrender.com/api/media')
       .then(response => setMedia(response.data))
       .catch(error => console.error(error));
 
-    axios.get('http://localhost:5000/api/audio')
+    axios.get('https://student-backend-6rm6.onrender.com/api/audio')
       .then(response => setAudio(response.data))
       .catch(error => console.error(error));
   }, []);
@@ -44,7 +44,7 @@ const StudentPage = () => {
               <p className="text-gray-600">{item.description}</p>
               {item.fileUrl && (
                 <img
-                  src={`http://localhost:5000/${item.fileUrl}`}
+                  src={`https://student-backend-6rm6.onrender.com/${item.fileUrl}`}
                   alt="Media"
                   className="mt-2 h-96 rounded-lg shadow-sm"
                 />
@@ -62,7 +62,7 @@ const StudentPage = () => {
               <p className="text-gray-600">{item.description}</p>
               {item.fileUrl && (
                 <audio controls className="mt-2 w-full">
-                  <source src={`http://localhost:5000/${item.fileUrl}`} type="audio/mpeg" />
+                  <source src={`https://student-backend-6rm6.onrender.com/${item.fileUrl}`} type="audio/mpeg" />
                   Your browser does not support the audio element.
                 </audio>
               )}
